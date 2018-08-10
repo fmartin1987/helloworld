@@ -29,7 +29,7 @@ pipeline {
         stage('Upload to Repository') {
             steps {
                 script {
-                    sh 'mvn deploy:deploy-file ' +
+                    sh 'mvn -s Settings.xml deploy:deploy-file ' +
                        '-DrepositoryId=Nexus ' +
                        '-Durl=http://nexus-cicd.mdv-apps.oc.nologin.es/repository/maven-releases ' +
                        '-DgroupId=fmartin1987 ' +
